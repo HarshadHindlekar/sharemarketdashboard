@@ -1,0 +1,31 @@
+{
+  "name": "sharemarket-dashboard",
+  "version": "1.0.0",
+  "description": "Monorepo for the Sharemarket Dashboard client and API server.",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm --workspace client start",
+    "dev:server": "npm --workspace server dev",
+    "build": "npm --workspace server run build && npm --workspace client run build",
+    "build:client": "npm --workspace client run build",
+    "build:server": "npm --workspace server run build",
+    "test": "npm --workspace client test",
+    "start:server": "npm --workspace server start"
+  },
+  "keywords": [
+    "angular",
+    "express",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
