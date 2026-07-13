@@ -14,7 +14,7 @@ app.get('/api/health', (_request, response) => {
   response.json({
     service: 'sharemarket-dashboard-server',
     status: 'ok',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 });
 

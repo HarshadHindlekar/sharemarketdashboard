@@ -10,10 +10,14 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:client": "npm --workspace client start",
-    "dev:server": "npm --workspace server dev",
+    "dev:server": "npm --workspace server run dev",
     "build": "npm --workspace server run build && npm --workspace client run build",
     "build:client": "npm --workspace client run build",
     "build:server": "npm --workspace server run build",
+    "lint": "npm --workspaces run lint",
+    "lint:fix": "npm --workspaces run lint:fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "npm --workspace client test",
     "start:server": "npm --workspace server start"
   },
@@ -26,6 +30,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.1",
+    "prettier": "^3.9.5"
   }
 }
